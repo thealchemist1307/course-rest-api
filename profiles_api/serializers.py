@@ -33,3 +33,9 @@ class ProfileFeedItemSerializer(serializers.ModelSerializer):
         model = models.ProfileFeedItem
         fields = ('id', 'user_profile', 'status_text', 'created_on')
         extra_kwargs = {'user_profile': {'read_only': True}}
+class ClubInfoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model=models.ClubInfo
+        fields={'id','club_name','info'}
+        fields='__all__'
